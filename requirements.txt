@@ -1,0 +1,43 @@
+# ══════════════════════════════════════════════════════════════════════
+#  RAGbase — Python dependencies
+#
+#  Phase 1 (Search + Embed — no LLM):
+#    pip install -r requirements.txt
+#
+#  Phase 2 (Full RAG with LLM):
+#    pip install -r requirements.txt -r requirements-llm.txt
+# ══════════════════════════════════════════════════════════════════════
+
+# ── Web framework ──────────────────────────────────────────────────────
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+
+# ── GitHub crawling ────────────────────────────────────────────────────
+PyGithub==2.3.0
+
+# ── Markdown / MDX processing ──────────────────────────────────────────
+python-frontmatter==1.1.0        # YAML frontmatter parsing
+mistune==3.0.2                   # Markdown AST for heading extraction
+regex==2024.5.15                 # Advanced regex for MDX stripping
+
+# ── Chunking (token-aware) ─────────────────────────────────────────────
+langchain-text-splitters==0.2.0
+tiktoken==0.7.0
+
+# ── Elasticsearch ──────────────────────────────────────────────────────
+elasticsearch==8.13.0
+
+# ── Embedding: local provider (always installed as fallback) ───────────
+sentence-transformers==3.0.0
+torch==2.3.0                     # CPU build is fine; GPU auto-detected if available
+
+# ── Re-ranking (cross-encoder) ─────────────────────────────────────────
+# (sentence-transformers above already covers cross-encoder models)
+
+# ── Utilities ──────────────────────────────────────────────────────────
+python-dotenv==1.0.1
+pydantic==2.8.2
+httpx==0.27.0
+tenacity==8.3.0                  # Retry / back-off for API calls
+structlog==24.1.0                # Structured JSON logging

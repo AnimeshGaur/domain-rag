@@ -1,0 +1,6 @@
+# ── LLM + OpenAI embedding optional extras ────────────────────────────
+# Install alongside requirements.txt when using Phase 2:
+#   pip install -r requirements.txt -r requirements-llm.txt
+
+openai==1.30.0
+groq>=0.5.0
